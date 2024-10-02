@@ -16,12 +16,17 @@
 1. **레포지토리 클론**:
    ```bash
    git clone https://github.com/ByteBard-kr/auto-marketing-selfbot.git
+   ```
+   ```bash
    cd auto-marketing-selfbot
+   ```
 
 2. **라이브러리 설치**
    ```bash
    pip install -r requirements.txt
+   ```
 
 3. **실행**
    ```bash
    python3 main.py
+   ```
