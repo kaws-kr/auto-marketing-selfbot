@@ -7,8 +7,10 @@ def extract_discord_invites(text: str) -> list[str]:
     invites = re.findall(invite_pattern, text)
     return invites
 
+
 def get_display_width(text) -> int:
     return sum(2 if east_asian_width(char) in ('F', 'W', 'A') else 1 for char in text)
+
 
 def adjust_to_width(text, target_width, align='left'):
     current_width = get_display_width(text)
