@@ -6,6 +6,8 @@ from auto_marketing_selfbot.bot import SelfMarketingBot
 
 if __name__ == "__main__":
     bot = SelfMarketingBot(
+        token=config.TOKEN,
+        api_key=config.API_KEY,
         marketing_message=config.MESSAGE,
         auto_reply_message=config.AUTO_REPLY_MESSAGE,
         max_ratelimit_timeout=0.1

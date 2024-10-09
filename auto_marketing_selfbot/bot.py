@@ -6,6 +6,7 @@ from colorama import Fore, Style
 
 import config
 from auto_marketing_selfbot.utils import get_display_width, adjust_to_width
+from discord_tools import Client, CaptchaHandler
 
 
 class SelfMarketingBot(discord.Client):
@@ -21,7 +22,7 @@ class SelfMarketingBot(discord.Client):
         **options: discord.Client 클래스에 전달할 추가 옵션.
     """
 
-    def __init__(self, marketing_message: str, auto_reply_message: str, **options):
+    def __init__(self, token: str, api_key: str, marketing_message: str, auto_reply_message: str, **options):
         """
         SelfMarketingBot의 생성자.
 
@@ -37,6 +38,11 @@ class SelfMarketingBot(discord.Client):
 
         self.marketing_message = marketing_message
         self.auto_reply_message = auto_reply_message
+        
+        self.api_client = Client(
+            token=token,
+            captcha_handler=CaptchaHandler(api_key)
+        )
 
 
     async def on_ready(self) -> None:
